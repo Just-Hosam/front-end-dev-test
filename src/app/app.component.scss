@@ -1,63 +1,65 @@
 .component {
-    max-width: 990px;
-    margin: 0 auto;
+  max-width: 990px;
+  margin: 0 auto;
 
-    &__header {
-        position: relative;
-        font-size: 48px;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        color: #222222;
+  &__header {
+    position: relative;
+    font-size: 48px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    color: #222222;
 
-        &::after {
-            content: attr(data-bg);
-            color: #fff;
-            position: absolute;
-            z-index: -1;
-            left: 6px;
-            top: 3px;
-        }
+    &::after {
+      content: attr(data-bg);
+      color: #fff;
+      position: absolute;
+      z-index: -1;
+      left: 6px;
+      top: 3px;
     }
+  }
 
-    &__intro {
-        padding-bottom: 20px;
-        p {
-            position: relative;
-            letter-spacing: 0.1px;
-            color: #222222;
-            margin-left: 30px;
-            
-            &::before {
-                content: '';
-                background-color: #fff;
-                height: 80%;
-                width:100%;
-                padding: 2px 2px;
-                position: absolute;
-                z-index: -1;
-                transform: skew(327deg);
-                left: -14px;
-                top: 5px;
-            }
-        
-            code {
-                font-size: 16px;
-                font-weight: 900;
-                border: 1px solid #222222;
-                border-radius: 4px;
-                padding: 2px 4px;
-                background-color: rgba(255, 255, 255, 0.4);
-            }
-        }
-    }
+  &__intro {
+    padding-bottom: 20px;
+    p {
+      position: relative;
+      letter-spacing: 0.1px;
+      color: #222222;
+      margin-left: 30px;
 
-    &__content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      &::before {
+        content: "";
         background-color: #fff;
+        height: 80%;
         width: 100%;
-        min-height: 600px;
-        position: relative;
-        border-radius: 24px;
+        padding: 2px 2px;
+        position: absolute;
+        z-index: -1;
+        transform: skew(327deg);
+        left: -14px;
+        top: 5px;
+      }
+
+      code {
+        font-size: 16px;
+        font-weight: 900;
+        border: 1px solid #222222;
+        border-radius: 4px;
+        padding: 2px 4px;
+        background-color: rgba(255, 255, 255, 0.4);
+      }
     }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    width: 100%;
+    min-height: 600px;
+    position: relative;
+    border-radius: 24px;
+  }
 }
