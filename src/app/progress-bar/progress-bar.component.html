@@ -1,1 +1,6 @@
-<p>progress-bar works!</p>
+<div id="progress-bar">
+  <div id="progress-bar-cont" [ngStyle]="baseStyles">
+    <div id="progress-bar-color" [ngStyle]="barStyles"></div>
+  </div>
+  <p>{{ progress }}%</p>
+</div>

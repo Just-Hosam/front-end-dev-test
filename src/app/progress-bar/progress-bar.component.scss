@@ -1,0 +1,24 @@
+#progress-bar {
+  padding: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 700px;
+
+  #progress-bar-cont {
+    border: 1px solid #ccc;
+    width: 92.5%;
+    height: 0.5rem;
+    border-radius: 10px;
+
+    #progress-bar-color {
+      border-radius: 10px;
+      height: 100%;
+    }
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
