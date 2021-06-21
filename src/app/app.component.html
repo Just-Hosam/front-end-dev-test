@@ -19,19 +19,48 @@
     </p>
   </div>
   <div class="component__content">
-    <p>Loading: {{ loading }}</p>
-    <app-progress-bar *ngIf="loading" [loading]="loading"></app-progress-bar>
-    <p *ngIf="!loading">Welcome to our App!</p>
-    <app-progress-bar
-      [progress]="autoBar.progress"
-      [baseColor]="autoBar.baseColor"
-      [barColor]="autoBar.barColor"
-    ></app-progress-bar>
-    <app-progress-bar
-      *ngFor="let bar of bars"
-      [progress]="bar.progress"
-      [baseColor]="bar.baseColor"
-      [barColor]="bar.barColor"
-    ></app-progress-bar>
+    <div>
+      <p>Indeterminate:</p>
+      <app-progress-new
+        *ngIf="loading"
+        class="app-progress"
+        variant="indeterminate"
+      ></app-progress-new>
+      <span *ngIf="!loading">Loading Completed!</span>
+      <app-progress-new
+        class="app-progress"
+        variant="indeterminate"
+      ></app-progress-new>
+    </div>
+    <div>
+      <p>Deteminate:</p>
+      <app-progress-new
+        class="app-progress"
+        variant="determinate"
+        [progress]="progress"
+      ></app-progress-new>
+      <app-progress-new
+        class="app-progress"
+        variant="determinate"
+        [progress]="progress"
+        [label]="true"
+      ></app-progress-new>
+    </div>
+    <div>
+      <p>Buffer: <span>(based on 8000ms)</span></p>
+      <app-progress-new
+        *ngIf="loading"
+        class="app-progress"
+        variant="buffer"
+        [buffer]="8000"
+      ></app-progress-new>
+      <span *ngIf="!loading">Loading Completed!</span>
+      <app-progress-new
+        class="app-progress"
+        variant="buffer"
+        [label]="true"
+        [buffer]="8000"
+      ></app-progress-new>
+    </div>
   </div>
 </div>

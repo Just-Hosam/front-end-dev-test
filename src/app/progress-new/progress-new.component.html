@@ -1,0 +1,8 @@
+<div class="progress">
+  <div class="progress__cont" [ngStyle]="contStyles">
+    <div class="progress__cont__fill" [ngStyle]="fillStyles"></div>
+  </div>
+  <p class="progress__label" *ngIf="label" [ngStyle]="labelStyles">
+    {{ progress }}%
+  </p>
+</div>

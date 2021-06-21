@@ -12,30 +12,9 @@ interface Bar {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title: string = 'PENNY FE DEV TEST';
+  title: string = 'Angular Fun';
   loading: boolean = false;
-  autoBar: Bar = {
-    progress: 10,
-    baseColor: 'rgba(0, 0, 255, 0.25)',
-    barColor: 'blue',
-  };
-  bars: Bar[] = [
-    {
-      progress: 0,
-      baseColor: 'rgba(255, 0, 0, 0.25)',
-      barColor: 'red',
-    },
-    {
-      progress: 50,
-      baseColor: 'rgba(220, 220, 56, 0.25)',
-      barColor: 'rgb(220, 220, 56)',
-    },
-    {
-      progress: 100,
-      baseColor: 'rgba(0, 255, 0, 0.25)',
-      barColor: 'green',
-    },
-  ];
+  progress = 10;
 
   ngOnInit() {
     this.loading = true;
@@ -43,15 +22,14 @@ export class AppComponent implements OnInit {
     setTimeout(() => (this.loading = false), this.randomInt(4, 8) * 1000);
   }
 
+  randomInt(min: number, max: number) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
   // Bar increases from 10% to 90% on repeat
   autoBarDemo() {
     setInterval(() => {
-      this.autoBar.progress =
-        this.autoBar.progress >= 90 ? 10 : this.autoBar.progress + 10;
-    }, 800);
-  }
-
-  randomInt(min: number, max: number) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+      this.progress = this.progress >= 90 ? 10 : this.progress + 10;
+    }, 1500);
   }
 }
